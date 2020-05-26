@@ -18,7 +18,6 @@ name="madsonic"
 rcvar="${name}_enable"
 
 start_precmd="${name}_precmd"
-#stop_postcmd="${name}_postcmd"
 
 load_rc_config $name
 : ${madsonic_enable:="NO"}
@@ -26,8 +25,9 @@ load_rc_config $name
 
 
 pidfile="${madsonic_dir}/madsonic.pid"
-command="./var/madsonic/madsonic.sh"
+command=".${madsonic_dir}/madsonic.sh"
 command_args="--pidfile=${pidfile}"
+procname="/usr/local/openjdk8-jre/bin/java"
 
 madsonic_precmd()
 {
