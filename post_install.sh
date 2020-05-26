@@ -13,7 +13,7 @@ unzip madsonic-transcode.zip -d /var/madsonic/
 
 # Enable and start service
 sysrc -f /etc/rc.conf madsonic_enable="YES"
-service madsonic start
+service madsonic start 2>/dev/null
 
 # Cleanup
 rm madsonic.tar.gz
