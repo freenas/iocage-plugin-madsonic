@@ -13,6 +13,5 @@ service madsonic start 2>/dev/null
 
 # Cleanup
 rm madsonic.tar.gz
-rm madsonic-transcode.zip
 
 post_update.sh
