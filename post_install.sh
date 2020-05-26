@@ -14,4 +14,5 @@ service madsonic start 2>/dev/null
 # Cleanup
 rm madsonic.tar.gz
 
-post_update.sh
+# Run migrations
+/usr/local/migrations/0.0.1.sh
