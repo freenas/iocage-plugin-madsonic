@@ -26,11 +26,7 @@ load_rc_config $name
 
 
 pidfile="${madsonic_dir}/madsonic.pid"
-command="/usr/sbin/daemon"
-
-bazarr_precmd()
-{
-    ./var/madsonic/madsonic.sh --pidfile ${pidfile}
-}
+command="./var/madsonic/madsonic.sh"
+command_args="--pidfile ${pidfile}"
 
 run_rc_command "$1"
