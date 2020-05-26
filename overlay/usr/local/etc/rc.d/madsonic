@@ -31,7 +31,7 @@ command_args="--pidfile=${pidfile}"
 
 madsonic_precmd()
 {
-    export JAVA_HOME=/usr/local/bin/java
+    export JAVA_HOME=/usr/local/
 }
 
 run_rc_command "$1"
