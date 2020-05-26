@@ -1,10 +1,5 @@
 #!/bin/sh
 
-# Replace python2 bits to python3
-sed -i -e "s/0111/111/g" /usr/local/sbin/jettyctl
+fetch https://www.madsonic.org/pages/request.jsp?branch=6.2&target=20190425_madsonic-6.2.9084-standalone.tar.gz
 
-# Enable the service
-sysrc -f /etc/rc.conf jetty_enable="YES"
 
-# Start the service
-service jetty start 2>/dev/null
