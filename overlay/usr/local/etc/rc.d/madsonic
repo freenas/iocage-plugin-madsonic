@@ -8,8 +8,8 @@
 # to enable this service:
 #
 # madsonic_enable (bool):	Set to NO by default.
-#				Set it to YES to enable bazarr.
-# madsonic_dir: Directory where bazarr is installed
+#				Set it to YES to enable madsonic.
+# madsonic_dir: Directory where madsonic is installed
 #             Default: /var/madsonic
 
 . /etc/rc.subr
@@ -27,6 +27,6 @@ load_rc_config $name
 
 pidfile="${madsonic_dir}/madsonic.pid"
 command="./var/madsonic/madsonic.sh"
-command_args="--pidfile ${pidfile}"
+command_args="--pidfile=${pidfile}"
 
 run_rc_command "$1"
