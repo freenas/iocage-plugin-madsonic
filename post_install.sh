@@ -9,6 +9,7 @@ tar xf madsonic.tar.gz -C /var/madsonic
 rm madsonic.tar.gz
 
 # Run migrations
+echo "Running migrations"
 /usr/local/migrations/0.0.1.sh
 
 # Enable and start service
