@@ -18,6 +18,3 @@ service madsonic start
 # Cleanup
 rm madsonic.tar.gz
 rm madsonic-transcode.zip
-
-
-

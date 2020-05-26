@@ -26,7 +26,7 @@ load_rc_config $name
 
 pidfile="${madsonic_dir}/madsonic.pid"
 command=".${madsonic_dir}/madsonic.sh"
-command_args="--pidfile=${pidfile}"
+command_args="--pidfile=${pidfile} --default-transcode-folder=/usr/local/bin"
 procname="/usr/local/openjdk8-jre/bin/java"
 
 madsonic_precmd()
