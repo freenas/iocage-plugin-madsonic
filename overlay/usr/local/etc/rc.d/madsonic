@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# PROVIDE: madsonic
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# madsonic_enable (bool):	Set to NO by default.
+#				Set it to YES to enable madsonic.
+# madsonic_dir: Directory where madsonic is installed
+#             Default: /var/madsonic
+
+. /etc/rc.subr
+
+name="madsonic"
+rcvar="${name}_enable"
+
+start_precmd="${name}_precmd"
+
+load_rc_config $name
+: ${madsonic_enable:="NO"}
+: ${madsonic_dir:="/var/madsonic"}
+
+
+pidfile="${madsonic_dir}/madsonic.pid"
+command=".${madsonic_dir}/madsonic.sh"
+command_args="--pidfile=${pidfile} --default-transcode-folder=/usr/local/bin"
+procname="/usr/local/openjdk8-jre/bin/java"
+
+madsonic_precmd()
+{
+    export JAVA_HOME=/usr/local/
+}
+
+run_rc_command "$1"
